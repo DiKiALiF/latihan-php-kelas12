@@ -1,0 +1,18 @@
+[
+    {
+        "nama": "Nurul Huda",
+        "domisili": "Surabaya",
+        "hobi": 
+        [
+            {
+            "hobi1": "Berenang"
+            },
+            {
+            "hobi1": "Berlari"
+            },
+            {
+            "hobi1": "Bertamasya"
+            }
+        ]
+    }
+]
