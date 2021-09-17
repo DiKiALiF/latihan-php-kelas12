@@ -13,7 +13,7 @@
                 
                 <td><input type="text" name="angka1" id=""></td>
             <td>
-                <select class="opt" name="aritmatika">
+                <select class="opt" name="operasi">
 				<option value="+">+</option>
 				<option value="-">-</option>
 				<option value="X">x</option>
@@ -32,7 +32,7 @@
 if (isset($_POST["hitung"])) {
    $angka1 = $_POST['angka1'];
    $angka2 = $_POST['angka2'];
-   $aritmatika = $_POST['aritmatika'];
+   $oprasi = $_POST['operasi'];
     
    class kalkulator {
        
@@ -83,10 +83,10 @@ if (isset($_POST["hitung"])) {
    }
 
    $data = new kalkulator();
-   $data->tambah($angka1,$angka2,$aritmatika);
-   $data->kurang($angka1,$angka2,$aritmatika);
-   $data->kali($angka1,$angka2,$aritmatika);
-   $data->bagi($angka1,$angka2,$aritmatika);
+   $data->tambah($angka1,$angka2,$oprasi);
+   $data->kurang($angka1,$angka2,$oprasi);
+   $data->kali($angka1,$angka2,$oprasi);
+   $data->bagi($angka1,$angka2,$oprasi);
  
 }
 
