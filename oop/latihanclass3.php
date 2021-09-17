@@ -20,8 +20,6 @@
 				<option value="/">/</option>
 			</select></td>
                 <td><input type="text" name="angka2" id=""></td>
-           
-                
                 <td><input type="submit" name= "hitung" value="Hitung"></td>
             </tr>
         </form>
@@ -34,35 +32,25 @@
 if (isset($_POST["hitung"])) {
    $angka1 = $_POST['angka1'];
    $angka2 = $_POST['angka2'];
-    $oprasi = $_POST['operasi'];
+   $oprasi = $_POST['operasi'];
     
    class Matematika
    {
        public $x;
        public $y;
        public $z;
-      
-      
-
+       
        public function tambah($x,$y,$z)
        {
            $this->x = $x;
            $this->y = $y;
            $this->z = $z;
-           
-
+        
            if ($z == "+") {
                
             $hasil = $x + $y;
-            echo "Hasil ";
-            echo $x;
-            echo " ";
-            echo $z;
-            echo " ";
-            echo $y;
-            echo " = ";
-            echo $hasil;
-           }
+            echo "Hasil {$x} {$z} {$y} = {$hasil}";
+            }
     
        }
        public function kurang($x,$y,$z){
@@ -73,14 +61,7 @@ if (isset($_POST["hitung"])) {
         if ($z == "-") {
                
             $hasil = $x - $y;
-            echo "Hasil ";
-            echo $x;
-            echo " ";
-            echo $z;
-            echo " ";
-            echo $y;
-            echo " = ";
-            echo $hasil;
+            echo "Hasil {$x} {$z} {$y} = {$hasil}";
            }
        }
        public function kali($x,$y,$z){
@@ -91,14 +72,7 @@ if (isset($_POST["hitung"])) {
         if ($z == "X") {
                
             $hasil = $x * $y;
-            echo "Hasil ";
-            echo $x;
-            echo " ";
-            echo $z;
-            echo " ";
-            echo $y;
-            echo " = ";
-            echo $hasil;
+            echo "Hasil {$x} {$z} {$y} = {$hasil}";
            }
            
        }
@@ -110,14 +84,7 @@ if (isset($_POST["hitung"])) {
         if ($z == "/") {
                
             $hasil = $x / $y;
-            echo "Hasil ";
-            echo $x;
-            echo " ";
-            echo $z;
-            echo " ";
-            echo $y;
-            echo " = ";
-            echo $hasil;
+            echo "Hasil {$x} {$z} {$y} = {$hasil}";
            }
        }
    }
@@ -127,10 +94,7 @@ if (isset($_POST["hitung"])) {
    $data->kurang($angka1,$angka2,$oprasi);
    $data->kali($angka1,$angka2,$oprasi);
    $data->bagi($angka1,$angka2,$oprasi);
-
-   
-   
-   
+ 
 }
 
 ?>
