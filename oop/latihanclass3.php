@@ -13,7 +13,7 @@
                 
                 <td><input type="text" name="angka1" id=""></td>
             <td>
-                <select class="opt" name="operasi">
+                <select class="opt" name="aritmatika">
 				<option value="+">+</option>
 				<option value="-">-</option>
 				<option value="X">x</option>
@@ -32,68 +32,61 @@
 if (isset($_POST["hitung"])) {
    $angka1 = $_POST['angka1'];
    $angka2 = $_POST['angka2'];
-   $oprasi = $_POST['operasi'];
+   $aritmatika = $_POST['aritmatika'];
     
-   class Matematika
-   {
+   class kalkulator {
+       
        public $x;
        public $y;
        public $z;
        
-       public function tambah($x,$y,$z)
-       {
+       public function tambah($x,$y,$z){
            $this->x = $x;
            $this->y = $y;
            $this->z = $z;
-        
-           if ($z == "+") {
-               
+           if ($z == "+") {  
             $hasil = $x + $y;
             echo "Hasil {$x} {$z} {$y} = {$hasil}";
             }
-    
        }
+
        public function kurang($x,$y,$z){
         $this->x = $x;
         $this->y = $y;
         $this->z = $z;
-
         if ($z == "-") {
-               
             $hasil = $x - $y;
             echo "Hasil {$x} {$z} {$y} = {$hasil}";
            }
        }
+
        public function kali($x,$y,$z){
         $this->x = $x;
         $this->y = $y;
         $this->z = $z;
-
         if ($z == "X") {
-               
             $hasil = $x * $y;
             echo "Hasil {$x} {$z} {$y} = {$hasil}";
-           }
-           
+           }    
        }
+
        public function bagi($x,$y,$z){
         $this->x = $x;
         $this->y = $y;
         $this->z = $z;
-        
         if ($z == "/") {
-               
             $hasil = $x / $y;
             echo "Hasil {$x} {$z} {$y} = {$hasil}";
            }
        }
+
    }
 
-   $data = new Matematika();
-   $data->tambah($angka1,$angka2,$oprasi);
-   $data->kurang($angka1,$angka2,$oprasi);
-   $data->kali($angka1,$angka2,$oprasi);
-   $data->bagi($angka1,$angka2,$oprasi);
+   $data = new kalkulator();
+   $data->tambah($angka1,$angka2,$aritmatika);
+   $data->kurang($angka1,$angka2,$aritmatika);
+   $data->kali($angka1,$angka2,$aritmatika);
+   $data->bagi($angka1,$angka2,$aritmatika);
  
 }
 
