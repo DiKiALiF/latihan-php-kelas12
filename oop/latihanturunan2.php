@@ -1,6 +1,18 @@
-<?php
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-if(isset($_POST['simpan'])){
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <?php
+  if(isset($_POST['simpan'])){
     $no = $_POST['no'];
     $nama = $_POST['nama'];
     $unit = $_POST['unit'];
@@ -12,23 +24,27 @@ if(isset($_POST['simpan'])){
     $pinjaman = $_POST['pinjaman'];
     $tabungan = $_POST['tabungan'];
     $lainnya = $_POST['lainnya'];
-
-class penggajihan {
+            
+       class penggajihan {
     public $total_gaji;
     public $total_pengeluaran;
 function pnggjhn($no, $nama, $unit, $tanggal) {
-echo "<table>";
+echo "<table align=center>";
 echo "<tr><td>No</td><td>:</td><td>{$no}</td></tr>";
 echo "<tr><td>Nama</td><td>:</td><td>{$nama}</td></tr>";
 echo "<tr><td>Unit</td><td>:</td><td>{$unit}</td></tr>";
-echo "<tr><td>Tanggal Gaji</td><td>:</td><td>{$tanggal}</td></tr></table>";
+echo "<tr><td>Tanggal Gaji</td><td>:</td><td>{$tanggal}</td></tr>";
 }
 }
 
+
+
+
 class gaji extends penggajihan {
 function gj($jabatan, $lamker, $staker) {
-echo "<br><b><i>Gaji</i></b><br>";
-echo "<table>";
+echo "<tr><td>&nbsp</td></tr>";
+echo "<tr><td><td><td><b><i>Gaji</i></b></td></td></td><tr>";
+echo "<tr><td>&nbsp</td></tr>";
 echo "<tr><td>Jabatan</td><td>:</td><td>{$jabatan}</td></tr>";
 if ($jabatan == "Kepala Sekolah"){
     $gajih = 5000000;
@@ -51,39 +67,49 @@ if ($lamker <= 5){
 echo "<tr><td>Bonus Lama Kerja</td><td>:</td><td>Rp. {$bonus}</td></tr>";
 echo "<tr><td>Status Kerja</td><td>:</td><td>{$staker}</td></tr>";
 if ($staker == "Pegawai Tetap"){
-    $tunjangan = 500000;
+    $tnjngn = 500000;
 } elseif ($staker == "Pegawai Kontrak"){
-    $tunjangan = 0;
+    $tnjngn = 0;
 }
-echo "<tr><td>Tunjangan Status Kerja</td><td>:</td><td>Rp. {$tunjangan}</td></tr>";
-$this->total_gaji = $gajih + $bonus + $tunjangan;
-echo "<tr><td><b>Total Gaji</td><td>:</td><td>Rp. " . $this->total_gaji . "</b></table>";
+echo "<tr><td>Tunjangan Status Kerja</td><td>:</td><td>Rp. {$tnjngn}</td></tr>";
+$this->total_gaji = $gajih + $bonus + $tnjngn;
+echo "<tr><td><b>Total Gaji</td><td>:</td><td><b>Rp. " . $this->total_gaji . "</b>";
 }
 }
 
-class potongan extends penggajihan {
+class potongan extends gaji {
 function ptngn($bpjs, $pinjaman, $tabungan, $lainnya) {
-    echo "<br><b><i>Potongan</i></b><br>";
-    echo "<table>";
-    echo "<tr><td>BPJS</td><td>:</td><td>{$bpjs}</td></tr>";
-    echo "<tr><td>Pinjaman</td><td>:</td><td>{$pinjaman}</td></tr>";
-    echo "<tr><td>Tabungan</td><td>:</td><td>{$tabungan}</td></tr>";
-    echo "<tr><td>Lainnya</td><td>:</td><td>{$lainnya}</td></tr>";
+    echo "<tr><td>&nbsp</td></tr>";
+    echo "<tr><td><td><td><b><i>Potongan</i></b></td></td></td><tr>";
+    echo "<tr><td>&nbsp</td></tr>";
+    echo "<tr><td>BPJS</td><td>:</td><td>Rp. {$bpjs}</td></tr>";
+    echo "<tr><td>Pinjaman</td><td>:</td><td>Rp. {$pinjaman}</td></tr>";
+    echo "<tr><td>Tabungan</td><td>:</td><td>Rp. {$tabungan}</td></tr>";
+    echo "<tr><td>Lainnya</td><td>:</td><td>Rp. {$lainnya}</td></tr>";
     $this->total_pengeluaran = $bpjs + $pinjaman + $tabungan + $lainnya;
-    echo "<tr><td><b>Total Potongan</td><td>:</td><td>Rp. " . $this->total_pengeluaran . "</b></table><br>";
+    echo "<tr><td><b>Total Potongan</td><td>:</td><td><b>Rp. " . $this->total_pengeluaran . "</b>";
     $sisa = $this->total_gaji - $this->total_pengeluaran;
-    echo "<b><i>Jumlah Yang Diterima : Rp. " . $this-> sisa . "</b></i>";
+    echo "<tr><td>&nbsp</td></tr>";
+    echo "<tr><td><b><i>Jumlah Yang Diterima <td>:</td><td> <b> <i> Rp. " . $sisa . "</i></b></td></td></tr>";
 }
 }
 
-
 }
-
-$a = new penggajihan;
-$a -> pnggjhn($no, $nama, $unit, $tanggal);
-$a = new gaji;
-$a -> gj($jabatan, $lamker, $staker);
 $a = new potongan;
+$a -> pnggjhn($no, $nama, $unit, $tanggal);
+$a -> gj($jabatan, $lamker, $staker);
 $a -> ptngn($bpjs, $pinjaman, $tabungan, $lainnya);
 
 ?>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

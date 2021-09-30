@@ -10,30 +10,39 @@
 
     <title>Hello, world!</title>
   </head>
-  <body background="bckgrnd.jpg">
-
+  <body background="new2.jpg">
+<style>
+  body {
+    
+  }
+  </style>
 <div class="container">
 <div class="container">
 
   <center><img src="download.png" /><br><br>
 <h2>PENGGAJIHAN<br>GURU/KARYAWAN YAYASAN ASSALAAM</h2></center><br/><br/>
 
-<form method="POST" action="">
+<form method="POST" action="latihanturunan2.php">
+<div class="card text-dark bg-light mb-3" style="max-width: 68rem;">
+  <div class="card-header">Data Penggajihan</div>
+  <div class="card-body">
+    
 
 <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">No</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="inputEmail3" name="no">
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="inputEmail3" name="no" placeholder="No">
     </div></div>
     <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Nama</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="inputEmail3" name="nama">
+    <div class="col-sm-12">
+      <input type="text" class="form-control" id="inputEmail3" name="nama" placeholder="Nama">
     </div></div>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Unit</label>
-    <div class="col-sm-8">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Unit Pendidikan</label>
+    <div class="col-sm-12">
     <select class="form-control" id="exampleFormControlSelect1" name="unit">
+<option>--Pilih Unit Pendidikan--</option>
 <option>TK</option>
 <option>SD</option>
 <option>SMP</option>
@@ -44,13 +53,16 @@
     </div></div>
     <div class="form-group row">
     <tr><label for="inputEmail3" class="col-sm-2 col-form-label">Tanggal</label>
-    <div class="col-sm-8">
+    <div class="col-sm-12">
       <input type="date" class="form-control" id="inputEmail3" name="tanggal">
     </div></div>
 
-<br><center><h3>Gaji</h3></center><br>
+    <form>
+      <div class="row">
+        <div class="col">
+<br><center><h3><i>Gaji</i></h3></center><br>
 <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Jabatan</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan</label>
     <div class="col-sm-8">
     <select class="form-control" id="exampleFormControlSelect1" name="jabatan">
 <option>Kepala Sekolah</option>
@@ -59,135 +71,48 @@
 </select>
     </div></div>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Lama Kerja</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">Lama Kerja</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" id="inputEmail3" name="lama_kerja">
     </div></div>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Status Kerja</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">Status Kerja</label>
     <div class="col-sm-8">
     <select class="form-control" id="exampleFormControlSelect1" name="status_kerja">
 <option>Pegawai Tetap</option>
 <option>Pegawai Konrak</option>
 </select>
-    </div></div>
-
-    <br><center><h3>Potongan</h3></center><br>
+    </div></div></div>
+<div class="col">
+    <br><center><h3><i>Potongan</i></h3></center><br>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">BPJS</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">BPJS</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" id="inputEmail3" name="bpjs">
     </div></div>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Pinjaman</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">Pinjaman</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" id="inputEmail3" name="pinjaman">
     </div></div>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Tabungan</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">Tabungan</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" id="inputEmail3" name="tabungan">
     </div></div>
     <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Lainnya</label>
+    <label for="inputEmail3" class="col-sm-3 col-form-label">Lainnya</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" id="inputEmail3" name="lainnya">
     </div></div>
-    <br><center><input type="submit" name="simpan" class="btn btn-primary" value="Submit"></center><br>
-
-    <?php
-
-if(isset($_POST['simpan'])){
-    $no = $_POST['no'];
-    $nama = $_POST['nama'];
-    $unit = $_POST['unit'];
-    $tanggal = $_POST['tanggal'];
-    $jabatan = $_POST['jabatan'];
-    $lamker = $_POST['lama_kerja'];
-    $staker = $_POST['status_kerja'];
-    $bpjs = $_POST['bpjs'];
-    $pinjaman = $_POST['pinjaman'];
-    $tabungan = $_POST['tabungan'];
-    $lainnya = $_POST['lainnya'];
-
-class penggajihan {
-    public $total_gaji;
-    public $total_pengeluaran;
-function pnggjhn($no, $nama, $unit, $tanggal) {
-echo "<table align=center>";
-echo "<tr><td>No</td><td>:</td><td>{$no}</td></tr>";
-echo "<tr><td>Nama</td><td>:</td><td>{$nama}</td></tr>";
-echo "<tr><td>Unit</td><td>:</td><td>{$unit}</td></tr>";
-echo "<tr><td>Tanggal Gaji</td><td>:</td><td>{$tanggal}</td></tr>";
-}
-}
-
-class gaji extends penggajihan {
-function gj($jabatan, $lamker, $staker) {
-echo "<tr><td>&nbsp</td></tr>";
-echo "<tr><td><td><td><b><i>Gaji</i></b></td></td></td><tr>";
-echo "<tr><td>&nbsp</td></tr>";
-echo "<tr><td>Jabatan</td><td>:</td><td>{$jabatan}</td></tr>";
-if ($jabatan == "Kepala Sekolah"){
-    $gajih = 5000000;
-} elseif ($jabatan == "Guru"){
-    $gajih = 3000000;
-} elseif ($jabatan == "Karyawan"){
-    $gajih = 1500000;
-} else {
-    $gajih = 0;
-}
-echo "<tr><td>Gaji</td><td>:</td><td>Rp. {$gajih}</td></tr>";
-echo "<tr><td>Lama Kerja</td><td>:</td><td>{$lamker} Tahun</td></tr>";
-if ($lamker <= 5){
-    $bonus = 0;
-} elseif ($lamker > 5){
-    $bonus = 250000;
-} elseif ($lamker > 10){
-    $bonus = 500000;
-} 
-echo "<tr><td>Bonus Lama Kerja</td><td>:</td><td>Rp. {$bonus}</td></tr>";
-echo "<tr><td>Status Kerja</td><td>:</td><td>{$staker}</td></tr>";
-if ($staker == "Pegawai Tetap"){
-    $tnjngn = 500000;
-} elseif ($staker == "Pegawai Kontrak"){
-    $tnjngn = 0;
-}
-echo "<tr><td>Tunjangan Status Kerja</td><td>:</td><td>Rp. {$tnjngn}</td></tr>";
-$this->total_gaji = $gajih + $bonus + $tnjngn;
-echo "<tr><td><b>Total Gaji</td><td>:</td><td><b>Rp. " . $this->total_gaji . "</b>";
-}
-}
-
-class potongan extends gaji {
-function ptngn($bpjs, $pinjaman, $tabungan, $lainnya) {
-    echo "<tr><td>&nbsp</td></tr>";
-    echo "<tr><td><td><td><b><i>Potongan</i></b></td></td></td><tr>";
-    echo "<tr><td>&nbsp</td></tr>";
-    echo "<tr><td>BPJS</td><td>:</td><td>Rp. {$bpjs}</td></tr>";
-    echo "<tr><td>Pinjaman</td><td>:</td><td>Rp. {$pinjaman}</td></tr>";
-    echo "<tr><td>Tabungan</td><td>:</td><td>Rp. {$tabungan}</td></tr>";
-    echo "<tr><td>Lainnya</td><td>:</td><td>Rp. {$lainnya}</td></tr>";
-    $this->total_pengeluaran = $bpjs + $pinjaman + $tabungan + $lainnya;
-    echo "<tr><td><b>Total Potongan</td><td>:</td><td><b>Rp. " . $this->total_pengeluaran . "</b>";
-    $sisa = $this->total_gaji - $this->total_pengeluaran;
-    echo "<tr><td>&nbsp</td></tr>";
-    echo "<tr><td><b><i>Jumlah Yang Diterima <td>:</td><td> <b> <i> Rp. " . $sisa . "</i></b></td></td></tr>";
-}
-}
-
-}
-
-$a = new potongan;
-
-$a -> pnggjhn($no, $nama, $unit, $tanggal);
-
-$a -> gj($jabatan, $lamker, $staker);
-
-$a -> ptngn($bpjs, $pinjaman, $tabungan, $lainnya);
-
-?> 
-    
+    <div class="row">
+    <br><center>
+      <br><input type="submit" name="simpan" class="btn btn-primary" value="Submit"></center><br></div>
+    </div>
+    </div>
+    </div>
+    </div>
+</form>
 </div>
 </form>
     <!-- Optional JavaScript; choose one of the two! -->

@@ -34,9 +34,6 @@
 </body>
 </html>
 <?php
-/*
-* kalkulator sederhana dengan PHP OOP
-*/
 if (isset($_POST['proses'])){
     $nim = $_POST['nim'];
     $nama = $_POST['nama'];
