@@ -11,11 +11,11 @@ class Login extends Database
     }
 
     // Menambah Data
-    public function create($username, $pass, $user_level)
+    public function create($username, $pass)
     {
         mysqli_query(
             $this->koneksi,
-            "insert into login values(null,'$username','$password','$user_level')"
+            "insert into login values(null,'$username','$pass')"
         );
     }
     // Menampilkan Data Berdasarkan ID
@@ -38,11 +38,11 @@ class Login extends Database
         return $datalogin;
     }
     // mengupdate data berdasarkan id
-    public function update($id, $username, $pass, $user_level)
+    public function update($id, $username, $pass)
     {
         mysqli_query(
             $this->koneksi,
-            "update login set username='$username', pass='$pass', user_level='$user_level' where id='$id'"
+            "update login set username='$username', pass='$pass' where id='$id'"
         );
     }
 
