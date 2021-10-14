@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Halaman Pegawai</title>
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style2.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="animate.css"> 
+</head>
+<body>
+	<?php 
+	session_start();
+
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['level']==""){
+		header("location:index.php?pesan=gagal");
+	}
+
+	?>
+	<center>
+	<p>Halo <b><?php echo $_SESSION['username']; ?></b> Anda telah login sebagai <b><?php echo $_SESSION['level']; ?></b>.</p>
+</center>
+<!-- Awal Navbar -->
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="beranda.html"><i class="glyphicon glyphicon-home"></i> Home</a>
+          <a class="navbar-brand" href="product.html"><i class="glyphicon glyphicon-tags"></i> Product</a>
+          <a class="navbar-brand" href="hobby.html"><i class="glyphicon glyphicon-phone"></i> Hobby</a>
+          <a class="navbar-brand" href="portofolio.html"><i class="glyphicon glyphicon-comment"></i> About</a>
+          <a class="navbar-brand" href="index.php"><i class="glyphicon glyphicon-off"></i> Log Out</a>
+        </div>
+        <form class="navbar-form navbar-right" action="/action_page.php">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </nav>
+    <!-- Akhir Navbar -->
+<!-- Awal Beranda -->
+<center><h5 class="animated slideInUp">Beranda</h5>
+    <h1 class="animated slideInLeft">WELCOME</h1></center>
+            <div class="col-sm-6 col-sm-offset-3">
+      <p style="padding-top: 30px" class="animated slideInRight">Lorem ipsum dolor sit amet consectetur, 
+        adipisicing elit. 
+        Cum perferendis cupiditate magnam, 
+        repudiandae temporibus totam incidunt voluptates consectetur nisi maxime? 
+        Nihil natus reprehenderit debitis molestias repellat quae rerum laudantium voluptatem.</p>
+            </div>
+            <!-- Akhir Beranda -->
+      <!-- Awal Footer -->
+      <footer>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="animated slideInDown">
+                &copy; Copyright: 2020 | created by Diki Alif Taufik 
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+        <!-- Akhir Footer -->
+  
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+	<br/>
+	<br/>
+
+</body>
+</html>

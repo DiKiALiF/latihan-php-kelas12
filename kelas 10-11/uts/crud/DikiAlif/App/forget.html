@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Formulir Lupa Username/Password</title>
+</head>
+<body>
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="animate.css"> 
+<div id="card"> 
+        <div id="card-content">
+          <div id="card-title">
+          <marquee><h4>Masukkan Username/Password Baru</h4></marquee>
+        <center><h2 class="animated infinite slideInUp">LOGIN</h2></center>
+        <div class="underline-title"></div>
+                    </div>
+                  </div>
+                  <form method="post" class="form" action="proses-pendaftaran.php"> 
+                  <label for="nama" style="padding-top:13px">Nama</label>
+                    <input
+                     id="nama"
+                     class="form-content"
+                     type="text"
+                     name="nama" style="text-center"
+                     placeholder="Masukkan Nama" autocomplete="off"/>
+                    <div class="form-border"></div>  
+                  <label for="username" style="padding-top:13px">Username</label>
+                    <input
+                     id="username"
+                     class="form-content"
+                     type="username"
+                     name="username" style="text-center"
+                     placeholder="Masukkan Username" autocomplete="off"/>
+                    <div class="form-border"></div>
+                  <label for="password" style="padding-top:13px">Password</label>
+                    <input
+                     id="password"
+                     class="form-content"
+                     type="password"
+                     name="password" style="text-center" 
+                     placeholder="Masukkan Password" autocomplete="off"/>
+                    <div class="form-border"></div>
+                    <label for="level" style="padding-top:13px">Level</label>
+                    <select name = "level">
+<option>admin</option>
+<option>pegawai</option>
+<option>pengurus</option>
+</select>
+                    <div class="form-border"></div>
+                    <label for="username" style="padding-top:44px"></label>
+                    <input class="animated infinite shake" type="submit" name="daftar"
+                    input id="submit-btn"   />
+            </div>
+          </div>
+                </form>
+                <!-- Akhir Login -->
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

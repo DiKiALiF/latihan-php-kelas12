@@ -1,0 +1,55 @@
+<?php include ("koneksi.php"); ?>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="animate.css"> 
+<title>Pendaftaran User</title>
+<link href="css/style2.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<center><h1 class="animated rotateIn">User Yang Sudah Mendaftar </h1>
+</header>
+<nav>
+<center><a href="form-daftar.php" class="animated rotateIn">[+] Tambah Baru</a>
+</nav>
+<br>
+<table class="animated rotateIn" border="1" style="-moz-border-radius:20px ; -web-kit-radius:20px ; 
+ -o-border-radius:20px; border:5px black"  width="50%" align="center">
+<thead>
+<center><tr  style="text-center">
+<th>ID</th>
+<th>Nama</th>
+<th>Username</th>
+<th>Password</th>
+<th>Level</th>
+<th>Tindakan</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$sql = "SELECT * FROM user";
+$query = mysqli_query($koneksi,$sql);
+
+while ($user = mysqli_fetch_array($query)) {
+echo "<tr>";
+
+echo "<td><center>".$user['id']."</td>";
+echo "<td><center>".$user['nama']."</td>";
+echo "<td><center>".$user['username']."</td>";
+echo "<td><center>".$user['password']."</td>";
+echo "<td><center>".$user['level']."</td>";
+
+echo "<td><center>";
+echo "<a href ='form-edit.php?id=".$user['id']."'>Edit</a> | ";
+echo "<a href ='hapus.php?id=".$user['id']."'>Hapus</a>";
+echo "</td>";
+
+echo "</tr>";
+}
+?>
+</tbody>
+</table>
+<center><p class="animated rotateIn">Total: <?php echo mysqli_num_rows($query) ?></p></center>
+</body>
+</html>

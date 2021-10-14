@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <title>Pendaftaran User Baru</title>
+ </head>
+ <link href="css/style2.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="animate.css"> 
+ <body bgcolor="grey">
+ <table style="-moz-border-radius:20px ; -web-kit-radius:20px ; 
+ -o-border-radius:20px; border:5px grey"  width="50%" align="center">
+  <tr>
+   <th style="-moz-border-radius:10px ; -web-kit-radius:10px ; 
+   -o-border-radius:10px; color:black; colspan="3" bgcolor="grey" height="50">
+    <font face="algerian" size="10">
+    <header class="animated pulse">Pendaftaran User Baru</header>
+ </font>
+   </th>
+  </tr>
+  <tr>
+   <td style="color:black" bgcolor="grey">
+    <center>
+    <font face="algerian" size="5" class="animated pulse">### MENU ###</font>
+ <center>
+   </td>
+  </tr>
+  <tr>
+  <tr>
+   <td style="-moz-border-radius:10px ; -web-kit-radius:10px ; 
+   -o-border-radius:10px; color:blue; " bgcolor="grey">
+   <ul style="color:black">
+    <br>
+    
+  <a href="form-daftar.php" style="color:black">
+  <li class="animated pulse">Daftar Baru
+     </a><br>
+   
+  <a href="list-user.php" style="color:black">
+  <li class="animated pulse">Pendaftar
+     </a><br>
+ </ul>
+     </td>
+    </tr>
+   </table>
+   <?php if (isset($_GET['status'])):?>
+<p>
+<?php if($_GET['status'] ='sukses') {
+    echo "<center>Pendaftaran User Baru Berhasil";
+} else {
+    echo "<center>Pendaftaran Gagal";
+}
+?>
+<?php endif ?>
+  </body>
+ </html>

@@ -1,0 +1,22 @@
+<?php 
+include("koneksi.php");
+if(isset($_GET['id'])) {
+
+    // ambil id dari query
+    $id = $_GET['id'];
+
+    // membuat query hapus
+    $sql = "DELETE FROM user WHERE id=$id";
+    $query = mysqli_query($koneksi, $sql);
+
+    // apakah query hapus berhasil?
+    if ($query) {
+        header('Location: list-user.php');
+    } else {
+        die("Gagal Menghapus... ");
+    }
+
+} else {
+    die("Akses Dilarang... ");
+}
+?>
