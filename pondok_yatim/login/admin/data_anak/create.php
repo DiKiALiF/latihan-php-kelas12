@@ -21,7 +21,7 @@
     <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>   
   <label for="exampleInputEmail1">Nama Pengasuh</label>
-                        <select name="nama_pengasuh" class="form-control">
+                        <select name="id_pengasuh" name="id_pengasuh" class="form-control">
                         <?php
                             include '../koneksi.php';
                             $pengasuh =  new Pengasuh();

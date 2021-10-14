@@ -17,12 +17,12 @@ class DataAnak extends Database
     }
 
     // Menambah Data
-    public function create($nama, $nama_pengasuh, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, 
+    public function create($nama, $id_pengasuh, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, 
     $pendidikan, $nama_ortu_wali, $alamat)
     {
         mysqli_query(
             $this->koneksi,
-            "insert into data_anak values(null,'$nama','$nama_pengasuh','$tempat_lahir', '$tanggal_lahir', 
+            "insert into data_anak values(null,'$nama','$id_pengasuh','$tempat_lahir', '$tanggal_lahir', 
             '$jenis_kelamin', '$pendidikan', '$nama_ortu_wali', '$alamat')"
         );
     }
@@ -46,12 +46,12 @@ class DataAnak extends Database
         return $dataanak;
     }
     // mengupdate data berdasarkan id
-    public function update($id, $nama, $nama_pengasuh, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $pendidikan, $nama_ortu_wali, 
+    public function update($id, $nama, $id_pengasuh, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $pendidikan, $nama_ortu_wali, 
     $alamat)
     {
         mysqli_query(
             $this->koneksi,
-            "update data_anak set nama='$nama', nama_pengasuh='$nama_pengasuh', tempat_lahir='$tempat_lahir',
+            "update data_anak set nama='$nama', id_pengasuh='$id_pengasuh', tempat_lahir='$tempat_lahir',
              tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', pendidikan='$pendidikan', 
              nama_ortu_wali='$nama_ortu_wali' 
              where id='$id'"

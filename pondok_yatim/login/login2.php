@@ -1,4 +1,7 @@
 <?php 
+    // session merupakan data yang disimpan dalam suatu server, contoh penggunaannya adalah ketika user telah login 
+    // di halaman tertentu
+    
     session_start();
     include 'koneksi2.php';
  
@@ -6,7 +9,7 @@
     $username = $_POST['username'];
     $pass = $_POST['pass'];
  
-    // menyeleksi data pada tabel admin dengan username dan pass yang sesuai
+    // menyeleksi data pada tabel login dengan username dan pass yang sesuai
     $data = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$username' and pass='$pass'");
  
     // menghitung jumlah data yang ditemukan
@@ -15,7 +18,7 @@
     if($cek > 0){
         $_SESSION['username'] = $username;
         $_SESSION['status'] = "login";
-        header("location:admin/index.php");
+        header("location:admin/beranda.php");
     }
     else{
         header("location:index.php?pesan=gagal");

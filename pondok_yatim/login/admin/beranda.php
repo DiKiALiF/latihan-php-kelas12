@@ -11,6 +11,53 @@
     <title>Hello, world!</title>
   </head>
   <body>
+     <!-- cek apakah sudah login -->
+     <?php 
+        session_start();
+        if($_SESSION['status']!="login"){
+            header("location:../index.php?pesan=belum_login");
+        }
+    ?>
+    <h4>Selamat datang, <?php echo $_SESSION['username']; ?>! anda telah login.</h4>
+    <br/>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tentang Kami
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="beranda.php">Sejarah</a>
+          <a class="dropdown-item" href="visimisi.php">Visi & Misi</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pengasuh/index.php">Data Pengasuh</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="data_anak/index.php">Data Anak</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Donasi
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="caradonasi.php">Cara Donasi</a>
+          <a class="dropdown-item" href="donasi/index.php">Donasi Sekarang</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
     <h2>Sejarah</h2>
     <h3>Pondok Yatim & Dhuafa</h3><br><br>
 <p>Berawal dari sebuah ide sederhana beberapa sahabat yang yang memiliki keprihatinan serta kepedulian yang sama terhadap anak yatim, piatu, dhuafa & warga yang kurang beruntung dalam menopang kesejahteraan hidup terlebih tanggung jawab mereka dalam mensukseskan pendidikan anak-anaknya, ditambah situasi warga Jakarta khususnya dan masyarakat Indonesia pada umumnya pasca krisis moneter  1997 dan berbuntut kerusuhan Mei 1998, yang berdampak pada krisis moral serta krisis kepemimpinan yang masih sangat terasa  hingga era tahun 2000 an sehingga memunculkan sebuah ide berupa  kegiatan bhakti sosial dengan harapan dapat meminimalisir mata rantai kemiskinan dan kebodohan sebagai akibat dampak krisis di atas.</p> <br> <p>
