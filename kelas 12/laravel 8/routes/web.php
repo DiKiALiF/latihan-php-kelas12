@@ -122,3 +122,45 @@ Route::get('data-siswa', function() {
 
 return view('data-siswa', compact('data'));
 });
+
+Route::get('siswa', function() {
+$siswas = [
+   ['id' => 1,
+   'nama' => 'Diki',
+   'username' => 'diki',
+   'email' => 'diki@gmail.com',
+   'alamat' => 'Bandung',
+   'mapel' => [
+       'mapel1' => 'Bhs. Indonesia',
+       'mapel2' => 'Bhs. Inggris',
+       'mapel3' => 'Bhs. Spanyol',
+    ]
+   ],
+];
+return view('siswa', compact('siswas'));
+});
+
+Route::get('hobi', function() {
+    $hobies = [
+       ['nis' => 1001,
+       'nama' => 'Adzura',
+       'kelas' => '12 RPL 1',
+       'hobi' => [
+           'hobi1' => 'Pergi ke cc',
+           'hobi2' => 'Tiktokan',
+           'hobi3' => 'Makan banyak',
+        ]
+       ],
+       ['nis' => 1002,
+       'nama' => 'Ikbal',
+       'kelas' => '12 RPL 1',
+       'hobi' => [
+           'hobi1' => 'Main bola',
+           'hobi2' => 'Ngaji',
+           'hobi3' => 'Memancing',
+           'hobi4' => 'Selalu tersenyum',
+        ]
+       ],
+    ];
+    return view('hobi', compact('hobies'));
+    });

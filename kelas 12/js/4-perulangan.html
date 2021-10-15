@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="data"></div>
+<script>
+
+    // perulangan for
+for (var i = 0; i < 5; i++) 
+{
+console.log("Nilai saat ini " + i);
+}
+
+var text="";
+for (var i = 0; i < 5; i++) 
+{
+text +="Nilai saat ini " + i + "<br>";
+document.getElementById("data").innerHTML = text;
+}
+
+    // perulangan while
+var j=0;
+while(j<5)
+{
+    console.log("While: Nilai saat ini "+j);
+    j++;
+}
+
+</script>
+</body>
+</html>
