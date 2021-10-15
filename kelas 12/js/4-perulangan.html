@@ -5,16 +5,16 @@
 <script>
 
     // perulangan for
-for (var i = 0; i < 5; i++) 
-{
-console.log("Nilai saat ini " + i);
-}
-
 var text="";
 for (var i = 0; i < 5; i++) 
 {
 text +="Nilai saat ini " + i + "<br>";
 document.getElementById("data").innerHTML = text;
+}
+
+for (var i = 0; i < 5; i++) 
+{
+console.log("Nilai saat ini " + i);
 }
 
     // perulangan while
@@ -24,6 +24,15 @@ while(j<5)
     console.log("While: Nilai saat ini "+j);
     j++;
 }
+
+    // perulangan do while
+    var k=0;
+do 
+{
+    console.log("Do While: Nilai saat ini "+k);
+    k++;
+}
+while(k<5)
 
 </script>
 </body>
