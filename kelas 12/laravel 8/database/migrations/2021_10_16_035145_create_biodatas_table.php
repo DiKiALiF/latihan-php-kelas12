@@ -14,7 +14,8 @@ class CreateBiodatasTable extends Migration
     public function up()
     {
         Schema::create('biodatas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();;
+            $table->string('name');
             $table->date('bornDate');
             $table->string('gender');
             $table->text('address');

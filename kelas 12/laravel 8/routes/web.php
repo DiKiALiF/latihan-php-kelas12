@@ -174,3 +174,13 @@ Route::get('/test-post', function() {
 $query = App\Models\Post::all();
 return view('test-post', compact('query'));
 });
+
+Route::get('/bio', function() {
+    $query = App\Models\Biodata::all();
+    return $query;
+});
+
+Route::get('/test-bio', function() {
+$query = App\Models\Biodata::all();
+return view('test-bio', compact('query'));
+});

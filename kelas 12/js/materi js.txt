@@ -79,3 +79,13 @@ Fungsi JavaScript dijalankan ketika "sesuatu" memanggilnya.
 3. Tanda kurung termasuk nama parameter dipisahkan oleh koma, contohnya seperti (parameter1, parameter2, ...)
 4. Kode yang akan dieksekusi ditempatkan di dalam kurung kurawal: {}
 
+Pertemuan 7 (Array)
+Array merupakan variabel khusus yang dapat menampung lebih dari satu data pada suatu waktu.
+
+Pertemuan 8 (Object)
+Object pada bahasa pemroraman merupakan "abstraksi" dari benda yang ada di dunia nyata. Object dapat digunakan untuk menyimpan data.
+Pada JavaScript, object terdiri dari name dan value(variable) atau method(fungsi).
+Name dan value disebut sebagai property.
+Kita bisa menganalogikan suatu object mobil mempunyai beberapa name antara lain nama mobil, berat, warna dan tipe.
+Masing-masing name tersebut mempunyai value misalnya nama mobil memiliki value Toyota, berat memiliki value 600kg, warna memiliki value putih, tipe memiliki value Agya. Nah name dan value tersebut disebut sebagai property.
+Selain dapat menyimpan property, kita juga bisa menyimpan method atau fungsi, misalnya sebuah mobil bisa mempunyai fungsi maju, mundur dan sebagainya.
