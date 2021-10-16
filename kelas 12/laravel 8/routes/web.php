@@ -164,3 +164,13 @@ Route::get('hobi', function() {
     ];
     return view('hobi', compact('hobies'));
     });
+
+Route::get('/testmodel', function() {
+    $query = App\Models\Post::all();
+    return $query;
+});
+
+Route::get('/test-post', function() {
+$query = App\Models\Post::all();
+return view('test-post', compact('query'));
+});
