@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController;
+use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\SuplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +24,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contoh', [MyController::class, 'tampilkan']);
+
+Route::get('/tampilan_bio', [BiodataController::class, 'tampil_data']);
+Route::get('/tampilan_post', [PostController::class, 'tampilkan_post']);
+
+Route::get('/barang', [BarangController::class, 'tampilkan_barang']);
+Route::get('/pembelian', [PembelianController::class, 'tampilkan_pembelian']);
+Route::get('/pembeli', [PembeliController::class, 'tampilkan_pembeli']);
+Route::get('/pesanan', [PesananController::class, 'tampilkan_pesanan']);
+Route::get('/suplier', [SuplierController::class, 'tampilkan_suplier']);
 
 Route::get('/halo', function () {
     return '<h1>Halo Dunia</h1>';
@@ -184,3 +203,7 @@ Route::get('/test-bio', function() {
 $query = App\Models\Biodata::all();
 return view('test-bio', compact('query'));
 });
+
+// Route::get('/contoh', function() {
+//     return view('sample');
+// });
